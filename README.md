@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Recipe Generator UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web UI for generating recipes using the Gemini API. This project allows users to input their available ingredients or preferences and receive creative recipe suggestions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Generate creative recipes based on ingredients or preferences
+- User-friendly interface
+- Powered by Gemini API for intelligent recipe suggestions
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v16+ recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/SubramanyaKS/recipe-generator-ui.git
+cd recipe-generator-ui
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Running the App
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+The app will be available at `http://localhost:5173`.
+
+## Configuration
+
+Set your Gemini API key in an environment variable:
+
+```bash
+VITE_API_BASE_URL=your_server_url
+```
+
+## Usage
+
+1. Enter your available ingredients or preferences.
+2. Click "Generate Recipe".
+3. View and save the suggested recipe.
+
+## Technologies Used
+
+- React
+- Gemini API
+- CSS/Styled Components
+
+## License
+
+MIT
+
+---
+
+*This project is not affiliated with Google or Gemini API.*

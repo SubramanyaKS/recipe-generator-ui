@@ -31,7 +31,7 @@ const InputCard: React.FC = () => {
             placeholder='Enter the ingredients you wish to have recipe'>
           </textarea>
           <div className='mt-2 flex items-center justify-center'>
-            <Button title='Generate' color='bg-[var(--accent-color)]' onClick={(e)=>handleGenerateClick(e)}/>
+            <Button title='Generate' color='bg-[var(--accent-color)] hover:bg-[var(--primary-color)]' onClick={(e)=>handleGenerateClick(e)}/>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
+import { ClipboardIcon, DownloadIcon } from "lucide-react";
 import { useRecipeContext } from "../context/RecipeContext"
 import { copyRecipe, handleDownloadRecipe } from "../services/services";
-import Button from "./Button";
+import IconButton from "./IconButton";
 
 const RecipeCard = () => {
   const {recipes} = useRecipeContext();
@@ -29,9 +30,9 @@ const RecipeCard = () => {
       </ol>
         </div>
         {recipes?<div className="flex flex-row justify-between m-3">
-           <Button color='bg-[var(--accent-color)] hover:bg-[var(--primary-color)]' onClick={()=>handleDownloadRecipe(recipes)} title="Save Recipe"/>
-           <Button color='bg-[var(--primary-color)] hover:bg-[var(--accent-color)]' onClick={()=>copyRecipe(recipes)} title="Copy Recipe"/>
-            
+            <IconButton color="bg-[var(--accent-color)] hover:bg-[var(--primary-color)]" Icon={<ClipboardIcon />} title="Copy Recipe" onClick={() => copyRecipe(recipes)} />
+         <IconButton color="bg-[var(--primary-color)] hover:bg-[var(--accent-color)]" Icon={<DownloadIcon />} title="Download Recipe" onClick={() => handleDownloadRecipe(recipes)} />
+
         </div>
         : null
         }

@@ -5,10 +5,11 @@ const RecipeContext = createContext<RecipeContextType | undefined>(undefined);
 
 export const RecipeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [recipes, setRecipes] = useState<string>('');
+    const [cuisine,setCuisine]=useState<string>('');
 
 
     return (
-        <RecipeContext.Provider value={{ recipes, setRecipes }}>
+        <RecipeContext.Provider value={{ recipes, setRecipes,cuisine,setCuisine }}>
             {children}
         </RecipeContext.Provider>
     );

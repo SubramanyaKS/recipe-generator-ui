@@ -8,7 +8,7 @@ const RecipeCard = () => {
   const [dishLine, ...stepLines] = recipes.split('Steps:');
   const dishName = dishLine.replace('Dish:', '').trim();
 
-  // Split steps by numbering (e.g., "1.", "2.", etc.)
+
   const steps = stepLines.join('').split(/\d+\.\s/).filter(Boolean);
 
   

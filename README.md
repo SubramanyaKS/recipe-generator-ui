@@ -7,6 +7,7 @@ A web UI for generating recipes using the Gemini API. This project allows users 
 - Generate creative recipes based on ingredients or preferences
 - User-friendly interface
 - Powered by Gemini API for intelligent recipe suggestions
+- Authentication using Firebase
 
 ## Getting Started
 
@@ -49,6 +50,7 @@ VITE_API_BASE_URL=your_server_url
 
 - React
 - Gemini API
+- Firebase
 - CSS/Styled Components
 
 ## License

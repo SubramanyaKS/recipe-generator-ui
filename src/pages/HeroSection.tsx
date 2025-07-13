@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 
 function HeroSection() {
-  const navigate = useNavigate(); // For navigation after submission
+  const navigate = useNavigate(); 
 
-  const handleGenerateRecipe = (e) => {
+  const handleGenerateRecipe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     navigate(`/home`);
   };

@@ -38,3 +38,9 @@ export type SubmitButtonProps = {
   title: string,
   OnClick?: () => void,
 }
+
+
+export type IngredientChipProps ={
+    text:string;
+    onDelete: React.MouseEventHandler<HTMLButtonElement>;
+}

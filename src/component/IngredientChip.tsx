@@ -1,10 +1,5 @@
-import React from 'react'
+import type { IngredientChipProps } from '../utils/types'
 
-
-type IngredientChipProps ={
-    text:string;
-    onDelete: React.MouseEventHandler<HTMLButtonElement>;
-}
 
 const IngredientChip = ({text, onDelete}:IngredientChipProps) => {
   return (

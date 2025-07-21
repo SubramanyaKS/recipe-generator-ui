@@ -1,41 +1,50 @@
 import React from 'react'
-import Button from './Button'
-import { useRecipeContext } from '../context/RecipeContext'
 import { generateRecipe } from '../services/api_service';
-import CuisineChoice from './CuisineChoice';
+import CuisineDropdown from './CuisineDropDown';
+import RecipesInput from './RecipesInput';
+import IngredientChip from './IngredientChip';
+import { useRecipeContext } from '../hooks/useRecipeContext';
 
 const InputCard: React.FC = () => {
-  const [inputValue, setInputValue] = React.useState<string>('');
-  const {setRecipes} = useRecipeContext();
+  const {setRecipes,ingredients,setIngredients} = useRecipeContext();
+  
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInputValue(e.target.value);
-  };
-
+ 
   const handleGenerateClick = async (e:React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const response = await generateRecipe(inputValue);
+    const ingredientList=ingredients.join(', ');
+    const response = await generateRecipe(ingredientList);
     setRecipes(response);
   };
 
+  const handleDeleteIngredients = (e:React.MouseEvent<HTMLButtonElement>,text:string)=>{
+    e.preventDefault();
+    setIngredients(ingredients.filter((chip) => chip !== text));
+  }
+
   
   return (
-    <div className='h-1/2 rounded-lg shadow-lg  w-1/2 flex justify-center items-center'>
-      <div className='w-full max-w-4xl p-4'>
-        <h3 className='text-[var(--text-color)] text-xl font-semibold mb-4 text-center '>Enter the Ingredients</h3>
+    <div className='max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6 space-y-6'>
+      {/* <div className='w-full max-w-4xl p-4'> */}
+        <h3 className='text-2xl font-semibold text-gray-800 font-montserrat text-center '>Enter the Ingredients</h3>
         <div className=''>
-          <textarea
-          onChange={handleInputChange}
-          value={inputValue}
-            className='w-full h-40 p-3 text-[var(--text-color)] border border-[var(--accent-color)] rounded-lg'
-            placeholder='Enter the ingredients you wish to have recipe'>
-          </textarea>
-          <CuisineChoice/>
-          <div className='mt-2 flex items-center justify-center'>
-            <Button title='Generate' color='bg-[var(--accent-color)] hover:bg-[var(--primary-color)]' onClick={(e)=>handleGenerateClick(e)}/>
+          <RecipesInput/>
+          <CuisineDropdown/>
+           <div className='flex flex-wrap m-5 gap-2'>
+            {ingredients.map((item)=>(
+              <div >
+                <IngredientChip text={item} onDelete={(e)=>handleDeleteIngredients(e,item)}/>
+              </div>
+            ))}
           </div>
+          <button
+          onClick={(e)=>handleGenerateClick(e)}
+        className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md font-semibold transition"
+      >
+        Get My Recipe
+      </button>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   )
 }

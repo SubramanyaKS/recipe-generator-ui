@@ -5,11 +5,18 @@ export type ButtonProps={
     color:string;
     onClick:React.MouseEventHandler<HTMLButtonElement>;
 }
+export type AuthContextType= {
+  currentUser: unknown;
+  loading: boolean;
+  logout: () => Promise<void>;
+}
 export interface RecipeContextType {
     recipes: string;
     setRecipes: (details:string)=>void;
     cuisine:string;
     setCuisine:(details:string)=>void;
+    ingredients:Array<string>;
+    setIngredients:(details:Array<string>)=>void;
 }
 export type IconButtonProps = {
   color: string;    

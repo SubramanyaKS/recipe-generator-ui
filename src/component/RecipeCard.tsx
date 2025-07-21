@@ -1,7 +1,7 @@
 import { ClipboardIcon, DownloadIcon } from "lucide-react";
-import { useRecipeContext } from "../context/RecipeContext"
 import { copyRecipe, handleDownloadRecipe } from "../services/services";
 import IconButton from "./IconButton";
+import { useRecipeContext } from "../hooks/useRecipeContext";
 
 const RecipeCard = () => {
   const {recipes} = useRecipeContext();

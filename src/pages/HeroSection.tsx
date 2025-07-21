@@ -38,6 +38,8 @@ function HeroSection() {
         </motion.p>
 
         {/* Call to Action / Input Area */}
+         
+
         <motion.form
           onSubmit={handleGenerateRecipe}
           initial={{ y: 20, opacity: 0 }}

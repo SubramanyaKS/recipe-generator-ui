@@ -10,7 +10,12 @@ export type AuthContextType= {
   loading: boolean;
   logout: () => Promise<void>;
 }
-export interface RecipeContextType {
+export type RecipeTnputUIProps = {
+  newItem:string;
+  onClick:React.MouseEventHandler<HTMLButtonElement>;
+  onChange:ChangeEventHandler;
+}
+export type RecipeContextType = {
     recipes: string;
     setRecipes: (details:string)=>void;
     cuisine:string;
@@ -38,7 +43,6 @@ export type SubmitButtonProps = {
   title: string,
   OnClick?: () => void,
 }
-
 
 export type IngredientChipProps ={
     text:string;

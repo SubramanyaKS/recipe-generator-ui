@@ -1,19 +1,19 @@
 import React from 'react'
-import { generateRecipe } from '../services/api_service';
+import { generateRecipes } from '../services/api_service';
 import CuisineDropdown from './CuisineDropDown';
 import RecipesInput from './RecipesInput';
 import IngredientChip from './IngredientChip';
 import { useRecipeContext } from '../hooks/useRecipeContext';
 
 const InputCard: React.FC = () => {
-  const { setRecipes, ingredients, setIngredients } = useRecipeContext();
+  const { setRecipes, ingredients, setIngredients,cuisine } = useRecipeContext();
 
 
 
   const handleGenerateClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const ingredientList = ingredients.join(', ');
-    const response = await generateRecipe(ingredientList);
+    const response = await generateRecipes(ingredientList,cuisine);
     setRecipes(response);
   };
 

@@ -9,3 +9,7 @@ export const handleDownloadRecipe = (recipes:string) => {
 export const copyRecipe =(recipes:string)=>{
     navigator.clipboard.writeText(recipes);
 }
+export const speak=(recipes:string)=>{
+    const speech = new SpeechSynthesisUtterance(recipes);
+    window.speechSynthesis.speak(speech);
+}

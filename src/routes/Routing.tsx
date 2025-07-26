@@ -10,6 +10,7 @@ import ProtectedRoute from './ProtectedRoute';
 import HeroSection from '../pages/HeroSection';
 import { AuthProvider } from '../providers/AuthProvider';
 import { RecipeProvider } from '../providers/RecipeProvider';
+import ForgotPassword from '../pages/ForgotPassword';
 
 const Routing: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const Routing: React.FC = () => {
           <Route path="/home" element={<Home />} />
         </Route>
           <Route path="/auth" Component={Auth} />
+          <Route path="/forgot-password" element={<ForgotPassword/>}/>
           <Route Component={NotFound} />
         </Routes>
       </Router>

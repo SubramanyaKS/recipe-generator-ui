@@ -11,8 +11,7 @@ const NavBar:React.FC = () => {
                     <div className="flex-shrink-0">
                         <h1 className="text-xl font-bold">Recipe Generator</h1>
                     </div>
-                </div>
-                <div className="flex justify-end">
+                    <div className="flex justify-end">
                     {/* logout */}
                     {currentUser ? (
                         <button
@@ -21,10 +20,9 @@ const NavBar:React.FC = () => {
                         >
                             Logout
                         </button>
-                    ) : (
-                        <span className="text-gray-300">Not logged in</span>
-                    )}
+                    ) : null}
                     </div>
+                </div>
             </div>
         </nav>
     )

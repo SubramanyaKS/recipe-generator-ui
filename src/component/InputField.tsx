@@ -9,7 +9,7 @@ const InputFeild = ({title,name,OnChange,id,value,type}:InputProps) => {
             <input
               type={type}
               id={id}
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-orange-400 focus:outline-none"
+              className="w-full m-1 flex-1 px-4 py-2 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-orange-400 focus:outline-none"
               value={value}
               onChange={OnChange}
               name={name}

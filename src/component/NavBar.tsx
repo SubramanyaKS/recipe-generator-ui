@@ -9,7 +9,7 @@ const NavBar:React.FC = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <h1 className="text-xl font-bold">Recipe Generator</h1>
+                        <h1 className="text-xl font-bold">RecipeGenAI</h1>
                     </div>
                     <div className="flex justify-end">
                     {/* logout */}

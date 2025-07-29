@@ -4,11 +4,12 @@ import { RecipeContext } from '../context/RecipeContext';
 export const RecipeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [recipes, setRecipes] = useState<string>('');
     const [cuisine,setCuisine]=useState<string>('');
+    const [mealType,setMealType]=useState<string>('');
     const [ingredients,setIngredients]=useState<Array<string>>([])
 
 
     return (
-        <RecipeContext.Provider value={{ recipes, setRecipes,cuisine,setCuisine,ingredients,setIngredients }}>
+        <RecipeContext.Provider value={{ recipes, setRecipes,cuisine,setCuisine,ingredients,setIngredients,mealType,setMealType }}>
             {children}
         </RecipeContext.Provider>
     );

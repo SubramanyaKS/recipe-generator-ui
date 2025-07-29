@@ -7,3 +7,11 @@ export const cuisines = [
     { id: 'american', label: 'American' },
     { id: 'mexican', label: 'Mexican' },
   ];
+
+export const mealTypes =[
+  {id: 'breakfast',label:'BreakFast'},
+  {id: 'lunch',label:'Lunch'},
+  {id: 'dinner',label:'Dinner'},
+  {id: 'snack',label:'Snack'},
+  {id: 'dessert',label:'Dessert'}
+]

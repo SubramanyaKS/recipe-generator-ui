@@ -12,7 +12,8 @@ const RecipeCard = () => {
   
 
   return (
-   <RecipeCardUI steps={steps} dishName={dishName} recipes={recipes}/>
+   <div>
+    {recipes && <RecipeCardUI steps={steps} dishName={dishName} recipes={recipes}/>}</div>
   )
 }
 

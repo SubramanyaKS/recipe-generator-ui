@@ -22,6 +22,8 @@ export type RecipeContextType = {
     setCuisine:(details:string)=>void;
     ingredients:Array<string>;
     setIngredients:(details:Array<string>)=>void;
+    mealType:string;
+    setMealType:(details:string)=>void;
 }
 export type IconButtonProps = {
   color: string;    
@@ -47,4 +49,17 @@ export type SubmitButtonProps = {
 export type IngredientChipProps ={
     text:string;
     onDelete: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+type DropdownItem ={
+  id: string;
+  label: string;
+}
+
+export type ReusableDropdownProps ={
+  label?: string;
+  items: DropdownItem[];
+  selected?: string;
+  onSelect: (id: string) => void;
+  placeholder?: string;
 }

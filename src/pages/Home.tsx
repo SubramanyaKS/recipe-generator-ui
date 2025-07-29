@@ -5,7 +5,7 @@ import RecipeCard from '../component/RecipeCard'
 
 const Home:React.FC = () => {
   return (
-    <section>
+    <section className="p-7">
       <Title/>
       <div className='flex flex-col items-center justify-center mt-10 mx-5'>
         <InputCard/>

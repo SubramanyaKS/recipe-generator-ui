@@ -3,12 +3,14 @@ import type { RecipeTnputUIProps } from '../utils/types'
 
 const RecipesInputUI = ({newItem,onChange,onClick}:RecipeTnputUIProps) => {
   return (
-    <div
+    <div>
+      <label className='block font-medium text-gray-700 mb-1'>Enter the Ingredents</label>
+      <div
       className="flex flex-col sm:flex-row gap-3"
     >
       <input
         type="text"
-        placeholder="e.g., broccoli, pasta, no dairy"
+        placeholder="e.g., broccoli, rice, ragi"
         value={newItem}
         onChange={onChange}
         aria-label="Enter ingredients or preferences"
@@ -21,6 +23,7 @@ const RecipesInputUI = ({newItem,onChange,onClick}:RecipeTnputUIProps) => {
        <Plus className='font-bold'/> Add Ingredients
       </button>
 
+    </div>
     </div>
   )
 }
